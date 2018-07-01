@@ -56,3 +56,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY --from=builder /opt/PlanetaryImager/build/PlanetaryImager-0.7.0-Linux-x86_64.tar.gz .
 
 RUN tar xf /opt/PlanetaryImager-0.7.0-Linux-x86_64.tar.gz --strip-components=1 -C /
+
+CMD ["planetary_imager"]
