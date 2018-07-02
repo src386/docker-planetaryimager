@@ -69,10 +69,6 @@ Or you may want to use the docker-compose.yml file:
 
 ## FAQ
 
-### How do I delete install.php ?
-
-Restart the container. If install.php is still present, open an issue.
-
 ## Licensing
 
 Since Planetary Imager is under [GNU General Public License][gnugpl], docker-planetaryimager too.
