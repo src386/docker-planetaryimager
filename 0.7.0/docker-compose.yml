@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  planetaryimager:
+    image: src386/docker-planetaryimager:latest
+    build:
+      context: .
+    devices:
+      - /dev/dri:/dev/dri
+    environment:
+      - DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    privileged: true
