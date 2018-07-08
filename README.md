@@ -16,17 +16,21 @@
 - [`0.7.0`][dockerfile-0.7.0], [`latest`][dockerfile-latest] ([0.7.0/Dockerfile][dockerfile-latest])
 
 [dockerfile-latest]: https://github.com/src386/docker-planetaryimager/blob/master/0.7.0/Dockerfile
-[dockerfile-5.6]: https://github.com/src386/docker-planetaryimager/blob/master/0.7.0/Dockerfile
+[dockerfile-0.7.0]: https://github.com/src386/docker-planetaryimager/blob/master/0.7.0/Dockerfile
 
 ## Quick start
 
 
 ```
-docker run \
+$ xhost +
+$ docker run \
   --volume=/tmp/.X11-unix:/tmp/.X11-unix \
+  --volume=./Images:/root/Images \
+  --volume=/etc/localtime:/etc/localtime:ro \
   --device=/dev/dri:/dev/dri \
   --env="DISPLAY" \
-  --privileged planetary-imager:dev
+  --privileged \
+  src386/docker-planetaryimager:latest
 ```
 
 Or, using docker-compose (recommended):
@@ -37,18 +41,22 @@ services:
 
   planetaryimager:
     image: src386/docker-planetaryimager:latest
+    build:
+      context: .
     devices:
       - /dev/dri:/dev/dri
     environment:
       - DISPLAY
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - /etc/localtime:/etc/localtime:ro
+      - ./Images:/root/Images
     privileged: true
 ```
 
 Then fire up a Planetary Imager container:
 
-    docker-compose up -d
+    docker-compose up
 
 Features
 --------
