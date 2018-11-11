@@ -69,6 +69,7 @@ WORKDIR /opt
 RUN set -xe; \
     \
     deps=' \
+        file \
         fxload \
         libopencv-contrib2.4v5 \
         libopencv-core2.4v5 \
