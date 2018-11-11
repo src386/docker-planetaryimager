@@ -3,8 +3,10 @@
 *Qt capture software for astronomy, mainly planetary shooting.*
 
 [![RSS commits][rss-commits]](https://github.com/src386/docker-planetaryimager/commits/master.atom)
+[![Travis CI][travis-ci]](https://travis-ci.org/src386/docker-planetaryimager)
 
 [planetaryimager-logo]: https://raw.githubusercontent.com/src386/docker-planetaryimager/master/lib/images/planetary_imager_small.png
+[travis-ci]: https://img.shields.io/travis/src386/docker-planetaryimager.svg?style=fla
 [rss-commits]: https://img.shields.io/badge/RSS-commits-orange.svg
 
 [Planetary Imager][planetaryimager] is a fast, simple to use software for solar system imaging. Currently supports V4L2, ZWO and QHY devices.
